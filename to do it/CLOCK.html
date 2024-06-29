@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylish Digital Clock</title>
+<style>
+  #clock {
+    font-size: 4em;
+    text-align: center;
+    color: #333;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+<body>
+<div id="clock"></div>
+<script>
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>

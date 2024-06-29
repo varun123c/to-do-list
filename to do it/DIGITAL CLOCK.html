@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Clock with Date</title>
+<style>
+  #clock {
+    font-size: 2em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div id="clock"></div>
+<script>
+function updateClock() {
+  const now = new Date();
+  const date = now.toDateString();
+  const time = now.toLocaleTimeString();
+  document.getElementById('clock').innerHTML = `${date}<br>${time}`;
+}
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
